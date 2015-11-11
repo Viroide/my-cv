@@ -1,0 +1,129 @@
+@import colores
+@import url("https://fonts.googleapis.com/css?family=Source+Code+Pro")
+
+html, body 
+    margin 0
+    height 100%
+    font-family: 'Source Code Pro'
+/* Large */
+.box
+    height 100%
+    max-width 100%
+    display: flex
+    flex-flow: row nowrap
+  /* This aligns items to the end line on main-axis */
+  // justify-content: flex-end
+    nav 
+        // flex 1
+    .content 
+        flex 2
+
+    /* Medium screens */
+    // @media all and (max-width: 800px)
+        // justify-content: space-around
+  
+    /* Small screens */
+    
+nav 
+    background-color verde
+    ul
+        margin 0 
+        padding 0 24px
+        list-style none
+        height 100%
+        li 
+            text-align center
+            margin 12px 0
+            .text 
+                text-indent -99999px
+                display block
+            .fa
+                font-size 28px
+                color rosa
+                cursor pointer
+
+.content
+    // margin 
+    padding 22px
+    background-color carne
+    
+    h1 
+        color marron
+    
+    #datos-personales
+        &>*
+            float left
+        img 
+            width 160px
+        .datos-texto
+            p 
+                margin-left 12px
+                .label
+                    font-weight bold
+    #interest-links
+        ul li 
+            list-style none  
+            margin-bottom 8px          
+            a
+                line-height 28px
+                display inline-block
+            i.fa
+                font-size 28px
+                vertical-align middle
+                margin-right 8px
+                color rosa
+    #historial
+        .nodo-historia
+            position relative
+            &:after
+                clear:both
+                content " "
+                display block
+            &>*
+                float left
+            .nodo-circulo
+                i.fa
+                    font-size 40px
+                    &:after
+                        content " "
+                        display block
+                        width 4px
+                        height 22px
+                        background-color black
+                        position absolute
+                        top 36px
+                        left 16px
+            &:last-child
+                .nodo-circulo i.fa:after
+                    display none
+            .nodo-texto
+                color marron
+                margin-left 12px
+                .fecha
+                    margin-right 6px
+                    font-weight bold
+                    &:after
+                        content ": "
+
+
+.hide
+    display none
+.clearfix
+    clear both
+
+
+
+// chart CSS 
+
+.c3-axis-x .tick 
+    display none
+@media (max-width: 640px) 
+        .box 
+            flex-direction: column
+            nav 
+                // flex 1
+                ul 
+                    display: flex
+                    justify-content: space-around
+            .content 
+                // flex 2
