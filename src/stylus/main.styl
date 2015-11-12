@@ -4,11 +4,12 @@
 html, body 
     margin 0
     height 100%
+    width 100%
     font-family: 'Source Code Pro'
 /* Large */
 .box
     height 100%
-    max-width 100%
+    width 100%
     display: flex
     flex-flow: row nowrap
   /* This aligns items to the end line on main-axis */
@@ -17,6 +18,8 @@ html, body
         // flex 1
     .content 
         flex 2
+        // position fixed
+        overflow auto
 
     /* Medium screens */
     // @media all and (max-width: 800px)
@@ -33,7 +36,7 @@ nav
         height 100%
         li 
             text-align center
-            margin 12px 0
+            margin 24px 0
             .text 
                 text-indent -99999px
                 display block
@@ -75,36 +78,62 @@ nav
     #historial
         .nodo-historia
             position relative
+            padding 0 0 0 44px
             &:after
                 clear:both
                 content " "
                 display block
             &>*
-                float left
+                float left         
             .nodo-circulo
+                position absolute
+                left 0 
+                top 0 
                 i.fa
                     font-size 40px
+                    cursor pointer
+                    background-color carne
                     &:after
                         content " "
                         display block
                         width 4px
-                        height 22px
+                        height 150px
                         background-color black
                         position absolute
                         top 36px
                         left 16px
-            &:last-child
+            &:last-child                
                 .nodo-circulo i.fa:after
-                    display none
-            .nodo-texto
+                    background-color carne
+                    height 150px
+                    width 100%
+                    top 39px
+            .nodo-titulo
                 color marron
                 margin-left 12px
+                &:after
+                    clear both 
+                    display block
+                    content " "
+                    height 2px
+                    width 100%
                 .fecha
                     margin-right 6px
                     font-weight bold
                     &:after
                         content ": "
+            .nodo-texto
+                margin-left 12px
+                color naranja
+            &:hover
+                .nodo-texto 
+                    display block
+                i.fa 
+                    color verde
+                    &:after
+                        background-color verde
 
+                
 
 .hide
     display none
@@ -117,7 +146,7 @@ nav
 
 .c3-axis-x .tick 
     display none
-@media (max-width: 640px) 
+@media (device-width: 640px) 
         .box 
             flex-direction: column
             nav 
@@ -127,3 +156,6 @@ nav
                     justify-content: space-around
             .content 
                 // flex 2
+        #interest-links
+            ul 
+                padding 0  

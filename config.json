@@ -5,8 +5,8 @@
     "livereload": true
   },
   "build":{
-    "path_js":  "/js/my-cv.min.js",
-    "path_css":"/css/my-cv.min.css",
+    "path_js":  "./js/my-cv.min.js",
+    "path_css":"./css/my-cv.min.css",
     "livereload": false
   },
   "srcPath" :"./src",

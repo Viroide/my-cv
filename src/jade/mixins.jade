@@ -1,8 +1,15 @@
-mixin nodo-historia(fecha, texto)
+mixin nodo-historia(fecha, titulo, texto)
     .nodo-historia
         .nodo-circulo
             i.fa.fa-circle-o
-        .nodo-texto
+        .nodo-titulo
             p 
                 span.fecha= fecha
-                span= texto
+                span= titulo
+        .nodo-texto.hide
+            p=texto
+
+mixin tabButton(texto, ref, icono)
+    li
+        span.text= Texto
+        i(tab=ref, class="fa "+icono)

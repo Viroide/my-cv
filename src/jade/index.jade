@@ -4,6 +4,7 @@ html(lang="es")
         meta(charset="UTF-8")
         title Jon E. Eguiluz Resume
         link(rel="stylesheet", href="#{path_css}")
+        //- Load Font awesome icons
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
         //-  Load c3.css 
         link(href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" type="text/css")
@@ -14,18 +15,10 @@ html(lang="es")
         .box
             nav
                 ul#tab-selector
-                    li
-                        span.text Resumen
-                        i(tab="tab1").fa.fa-user
-                    li
-                        span.text Experiencia
-                        i(tab="tab2").fa.fa-calendar
-                    li 
-                        span.text Conocimientos
-                        i(tab="tab3").fa.fa-code
-                    li
-                        span.text Personal
-                        i(tab="tab4").fa.fa-file-text-o
+                    +tabButton("Resumen", "tab1", "fa-user")
+                    +tabButton("Experiencia", "tab2", "fa-calendar")
+                    +tabButton("Conocimientos", "tab3", "fa-code")
+                    +tabButton("Personal", "tab4", "fa-file-text-o")
             .content
                 #tabs
                     #tab1
@@ -48,37 +41,45 @@ html(lang="es")
                         .clearfix
 
                         #interest-links
-                            h2 Links de interes:
+                            h2 Links de interés:
                             ul
                                 li
                                     i.fa.fa-github
-                                    a(href="https://github.com/Viroide") https://github.com/Viroide
+                                    a(href="https://github.com/Viroide") github
                                 li
                                     i.fa.fa-twitter
-                                    a(href="https://twitter.com/viroide") https://twitter.com/viroide
+                                    a(href="https://twitter.com/viroide") twitter
                                 li
                                     i.fa.fa-linkedin
-                                    a(href="https://es.linkedin.com/in/jon-e-eguiluz-6b488914") https://es.linkedin.com/in/jon-e-eguiluz-6b488914
+                                    a(href="https://es.linkedin.com/in/jon-e-eguiluz-6b488914") linkedIn
 
                     #tab2.hide
                         h1 Experiencia
                         #historial
-                            +nodo-historia("07/1984", "Nacimiento")
-                            +nodo-historia("09/1987", "Ikastola Olabide")
-                            +nodo-historia("09/2001", "Diocesanas Arriaga (2º Batchiller)")
-                            +nodo-historia("09/2002", "Mondragón Unibertsitatea (Ing. Tec. Informática de Sistemas)")
-                            +nodo-historia("09/2006", "Erasmus en Polonia")
-                            +nodo-historia("09/2007", "Mediateca Arriga Diocesanas")
-                            +nodo-historia("09/2008", "Alegría-activity")
-                            +nodo-historia("12/2010", "Buala.net")
-                            +nodo-historia("11/2015", "...")
+                            +nodo-historia("07/1984", "Nacimiento", "En este periodo aprendí a gatear, luego a andar y hablar. Hoy en día creo que he alcanzado una maestría en estas áreas.")
+                            +nodo-historia("09/1987", "Ikastola Olabide", "Aquí aprendí a leer, matemáticas, algo de histora, empecé con los idiomas... Competencias básicas digamos.")
+                            +nodo-historia("09/2001", "Diocesanas Arriaga (2º Batchiller)", "Aquí me preparé la selectividad. Y pude elegir lo que siempre supe que quería hacer: Aprender a darles ordenes complejas a las máquinas. MUAHHAHAH!")
+                            +nodo-historia("09/2002", "Mondragón Unibertsitatea (Ing. Tec. Informática de Sistemas)", "Se me revelaron las bases de la informática. Arquitectura de Software y Desarrollo Web eran mis asignaturas favoritas.")
+                            +nodo-historia("09/2006", "Erasmus en Polonia", "Proyecto de fin de carrera. El proyecto consistía en monitorizar una red y dar alarmas si algo dejaba de responder, luego descubrí Nagios. Polska dzięki!")
+                            +nodo-historia("09/2007", "Mediateca Arriga Diocesanas", "Mi primer trabajo, mientras terminaba ciertos trámites con la universidad. Aquí adquirí paciencia y mano izquierda.")
+                            +nodo-historia("09/2008", "Alegría-activity", "Trabajo en el que aprendí que hay que saber de todo en esta vida: Desde crear webs a taladrar una mesa para pasar un cable hasta la pantalla. ")
+                            +nodo-historia("12/2010", "Buala.net", "Adquirí conocimientos reales de desarrollo web. Y me enamoré del webDev y como algunos dicen me hice un jsHipster")
+                            +nodo-historia("11/2015", "...", "Escucho ofertas.")
                                         
                     #tab3.hide
-                        h1 Conocimientos
+                        h1 Conocimientos 
+                        h2 Competencias de desarrollo web
                         #chart-holder
                             #chart
+                        h2 Competencias transversales
+                        #chart-holder-2
+                            #chart2
                     #tab4.hide
                         h1 Personal
+                        p.
+                            Esta sección es solo para que me conozcas un poco, si solo te interesan los datos cuantitativos vuelve al resto de pestañas. 
+                            
+
 
         script(src="#{path_js}")
         script.
