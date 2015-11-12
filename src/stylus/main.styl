@@ -97,7 +97,7 @@ nav
                         content " "
                         display block
                         width 4px
-                        height 150px
+                        height 250px
                         background-color black
                         position absolute
                         top 36px
@@ -105,7 +105,7 @@ nav
             &:last-child                
                 .nodo-circulo i.fa:after
                     background-color carne
-                    height 150px
+                    height 250px
                     width 100%
                     top 39px
             .nodo-titulo
@@ -146,16 +146,16 @@ nav
 
 .c3-axis-x .tick 
     display none
-@media (device-width: 640px) 
-        .box 
-            flex-direction: column
-            nav 
-                // flex 1
-                ul 
-                    display: flex
-                    justify-content: space-around
-            .content 
-                // flex 2
-        #interest-links
+@media (max-width: 640px)
+    .box 
+        flex-direction: column
+        nav 
+            // flex 1
             ul 
-                padding 0  
+                display: flex
+                justify-content: space-around
+        .content 
+            // flex 2
+    #interest-links
+        ul 
+            padding 0  
