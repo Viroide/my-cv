@@ -43,7 +43,9 @@ window.myCv = window.myCv || {};
   //   }
   // };
   myCv.hashEventHandle = function(){
-    myCv.tabChanger(window.location.hash.slice(1));
+    if (window.location.hash!==""){
+      myCv.tabChanger(window.location.hash.slice(1));
+    }
   };
   myCv.tabChanger = function(desireTabId){
         var tabs = document.getElementById("tabs").childNodes;
