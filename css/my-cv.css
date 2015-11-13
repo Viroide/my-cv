@@ -7,50 +7,57 @@
 
 /* line 1 : /home/viroide/proyectos/CV/src/stylus/colores.styl */
 
-/* line 2 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 30 : /home/viroide/proyectos/CV/src/stylus/colores.styl */
+
+/* line 1 : /home/viroide/proyectos/CV/src/stylus/mixins.styl */
+
+/* line 3 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro");
 
-/* line 4 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 7 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 html,
 body {
   margin: 0;
   height: 100%;
+  width: 100%;
   font-family: 'Source Code Pro';
 }
 
-/* line 8 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 12 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 /* Large */
 
-/* line 9 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 13 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .box {
   height: 100%;
-  max-width: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
+  -ms-box-orient: horizontal;
 }
 
-/* line 14 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-/* This aligns items to the end line on main-axis */
-
-/* line 16 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-
-/* line 18 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-.content {
+/* line 19 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.box .content {
+  -webkit-box-flex: 2;
+  -moz-box-flex: 2;
+  -webkit-flex: 2;
+  -ms-flex: 2;
   flex: 2;
+  overflow: auto;
 }
 
-/* line 21 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-/* Medium screens */
-
-/* line 25 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-/* Small screens */
-
-/* line 27 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 23 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 nav {
   background-color: #7fd1b9;
 }
 
-/* line 29 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 25 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 nav ul {
   margin: 0;
   padding: 0 24px;
@@ -58,75 +65,69 @@ nav ul {
   height: 100%;
 }
 
-/* line 34 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 30 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 nav ul li {
   text-align: center;
-  margin: 12px 0;
+  margin: 24px 0;
 }
 
-/* line 37 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-nav ul li .text {
-  text-indent: -99999px;
-  display: block;
-}
-
-/* line 40 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 33 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 nav ul li .fa {
   font-size: 28px;
   color: #e56399;
   cursor: pointer;
 }
 
-/* line 45 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 38 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content {
   padding: 22px;
   background-color: #e5d4ce;
 }
 
-/* line 50 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 42 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content h1 {
   color: #7a6563;
 }
 
-/* line 53 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 45 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 54 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 46 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #datos-personales>* {
   float: left;
 }
 
-/* line 56 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 48 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #datos-personales img {
   width: 160px;
 }
 
-/* line 58 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 50 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 59 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 51 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #datos-personales .datos-texto p {
   margin-left: 12px;
 }
 
-/* line 61 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 53 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #datos-personales .datos-texto p .label {
   font-weight: bold;
 }
 
-/* line 63 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 55 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 64 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 56 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #interest-links ul li {
   list-style: none;
   margin-bottom: 8px;
 }
 
-/* line 67 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 59 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #interest-links ul li a {
   line-height: 28px;
   display: inline-block;
 }
 
-/* line 70 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 62 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #interest-links ul li i.fa {
   font-size: 28px;
   vertical-align: middle;
@@ -134,98 +135,164 @@ nav ul li .fa {
   color: #e56399;
 }
 
-/* line 75 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 67 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 76 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 68 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #historial .nodo-historia {
   position: relative;
+  padding: 0 0 0 44px;
 }
 
-/* line 78 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 71 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #historial .nodo-historia:after {
   clear: both;
   content: " ";
   display: block;
 }
 
-/* line 82 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 75 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #historial .nodo-historia>* {
   float: left;
 }
 
-/* line 84 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-
-/* line 85 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-.content #historial .nodo-historia .nodo-circulo i.fa {
-  font-size: 40px;
+/* line 77 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-circulo {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-/* line 87 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 81 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-circulo i.fa {
+  font-size: 40px;
+  cursor: pointer;
+  background-color: #e5d4ce;
+}
+
+/* line 85 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #historial .nodo-historia .nodo-circulo i.fa:after {
   content: " ";
   display: block;
   width: 4px;
-  height: 22px;
+  height: 250px;
   background-color: #000;
   position: absolute;
   top: 36px;
   left: 16px;
 }
 
-/* line 96 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 94 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 97 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 95 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .content #historial .nodo-historia:last-child .nodo-circulo i.fa:after {
-  display: none;
+  background-color: #e5d4ce;
+  height: 250px;
+  width: 100%;
+  top: 39px;
 }
 
-/* line 99 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-.content #historial .nodo-historia .nodo-texto {
+/* line 100 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-titulo {
   color: #7a6563;
   margin-left: 12px;
 }
 
-/* line 102 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-.content #historial .nodo-historia .nodo-texto .fecha {
+/* line 103 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-titulo:after {
+  clear: both;
+  display: block;
+  content: " ";
+  height: 2px;
+  width: 100%;
+}
+
+/* line 109 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-titulo .fecha {
   margin-right: 6px;
   font-weight: bold;
 }
 
-/* line 105 : /home/viroide/proyectos/CV/src/stylus/main.styl */
-.content #historial .nodo-historia .nodo-texto .fecha:after {
+/* line 112 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-titulo .fecha:after {
   content: ": ";
 }
 
-/* line 109 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 114 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia .nodo-texto {
+  margin-left: 12px;
+  color: #de6e4b;
+}
+
+/* line 117 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+
+/* line 118 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia:hover .nodo-texto {
+  display: block;
+}
+
+/* line 120 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia:hover i.fa {
+  color: #7fd1b9;
+}
+
+/* line 122 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #historial .nodo-historia:hover i.fa:after {
+  background-color: #7fd1b9;
+}
+
+/* line 124 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+
+/* line 125 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+.content #personal small {
+  color: #de6e4b;
+}
+
+/* line 130 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .hide {
   display: none;
 }
 
-/* line 111 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 132 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .clearfix {
   clear: both;
 }
 
-/* line 118 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 136 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 .c3-axis-x .tick {
   display: none;
 }
 
-/* line 120 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 140 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 @media (max-width: 640px) {
 
-/* line 121 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 141 : /home/viroide/proyectos/CV/src/stylus/main.styl */
   .box {
-    flex-direction: column;
+    -webkit-flex-flow: column wrap;
+    -moz-flex-flow: column wrap;
+    -ms-flex-flow: column wrap;
+    flex-flow: column wrap;
+    -ms-box-orient: vertical;
   }
 
-/* line 123 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 143 : /home/viroide/proyectos/CV/src/stylus/main.styl */
 
-/* line 125 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 144 : /home/viroide/proyectos/CV/src/stylus/main.styl */
   .box nav ul {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+    -ms-justify-content: space-around;
     justify-content: space-around;
   }
 
-/* line 128 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+/* line 147 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+
+/* line 148 : /home/viroide/proyectos/CV/src/stylus/main.styl */
+  #interest-links ul {
+    padding: 0;
+  }
 }
