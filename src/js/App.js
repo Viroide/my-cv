@@ -36,7 +36,6 @@ window.myCv = window.myCv || {};
     // document.getElementById("tab-selector").addEventListener("click", myCv.tabEventHandler);
   };
   // Si cambio de tab al cambiar el hash ya no me hace falta este EventHandler
-
   // myCv.tabEventHandler =function(event){
   //   if (event.target !== event.currentTarget && event.target.getAttribute("tab") ) {
   //     var desireTabId = event.target.getAttribute("tab");
