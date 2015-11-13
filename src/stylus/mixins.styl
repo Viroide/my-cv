@@ -1,0 +1,30 @@
+flexDisplay()
+    display -webkit-box    
+    display -moz-box       
+    display -ms-flexbox    
+    display -webkit-flex   
+    display flex            
+
+flexOrder(n)
+    -webkit-box-flex: n;      
+    -moz-box-flex: n;         
+    // width: 20%;               
+    -webkit-flex: n;          
+    -ms-flex: n;              
+    flex: n;
+
+flexFlow(a, b)
+    -webkit-flex-flow: a b;
+    -moz-flex-flow: a b;
+    -ms-flex-flow: a b;
+    flex-flow: a b;
+    if a == "row"
+        -ms-box-orient: horizontal;
+    else
+        -ms-box-orient: vertical;
+
+flexJustify(n)
+    -webkit-justify-content: n;
+    -moz-justify-content: n;
+    -ms-justify-content: n;
+    justify-content: n;
