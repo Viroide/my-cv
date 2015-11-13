@@ -1,5 +1,8 @@
 @import colores
+@import mixins
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro")
+
+
 
 html, body 
     margin 0
@@ -10,22 +13,12 @@ html, body
 .box
     height 100%
     width 100%
-    display: flex
-    flex-flow: row nowrap
-  /* This aligns items to the end line on main-axis */
-  // justify-content: flex-end
-    nav 
-        // flex 1
-    .content 
-        flex 2
-        // position fixed
-        overflow auto
+    flexDisplay()
+    flexFlow(row, nowrap)
 
-    /* Medium screens */
-    // @media all and (max-width: 800px)
-        // justify-content: space-around
-  
-    /* Small screens */
+    .content 
+        flexOrder(2)
+        overflow auto
     
 nav 
     background-color verde
@@ -37,16 +30,12 @@ nav
         li 
             text-align center
             margin 24px 0
-            .text 
-                text-indent -99999px
-                display block
             .fa
                 font-size 28px
                 color rosa
                 cursor pointer
 
 .content
-    // margin 
     padding 22px
     background-color carne
     
@@ -132,30 +121,29 @@ nav
                     color verde
                     &:after
                         background-color verde
+    #personal 
+        small 
+            color naranja
 
                 
-
+// helper clases
 .hide
     display none
 .clearfix
     clear both
 
-
-
 // chart CSS 
-
 .c3-axis-x .tick 
     display none
+    
+// media queries
 @media (max-width: 640px)
     .box 
-        flex-direction: column
+        flexFlow(column, wrap)
         nav 
-            // flex 1
             ul 
-                display: flex
-                justify-content: space-around
-        .content 
-            // flex 2
+                flexDisplay()
+                flexJustify(space-around)
     #interest-links
         ul 
             padding 0  

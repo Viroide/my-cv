@@ -11,5 +11,5 @@ mixin nodo-historia(fecha, titulo, texto)
 
 mixin tabButton(texto, ref, icono)
     li
-        span.text= Texto
-        i(tab=ref, class="fa "+icono)
+        a(src=ref, href="#"+ref title=texto)
+            i(tab=ref, class="fa "+icono)

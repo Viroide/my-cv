@@ -72,7 +72,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('css-build', function() {
-  return gulp.src(srcPath+'/stylus/*.styl')
+  return gulp.src(srcPath+'/stylus/main.styl')
     .pipe(sourcemaps.init())
     .pipe(stylus({ compress: true }))
     .pipe(rename({ basename: pkg.name  , suffix:".min"}))
@@ -82,7 +82,7 @@ gulp.task('css-build', function() {
 });
 
 gulp.task('css', function() {
-  return gulp.src(srcPath+'/stylus/*.styl')
+  return gulp.src(srcPath+'/stylus/main.styl')
     .pipe(stylus({linenos: true}))
     .pipe(rename({ basename: pkg.name}))
     .pipe(gulp.dest(distPath+'/css/'))
