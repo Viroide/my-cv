@@ -1,4 +1,4 @@
-mixin nodo-historia(fecha, titulo, texto)
+mixin nodo-historia(fecha, titulo, texto, linkExtra, linkText)
     .nodo-historia
         .nodo-circulo
             i.fa.fa-circle-o
@@ -8,6 +8,9 @@ mixin nodo-historia(fecha, titulo, texto)
                 span= titulo
         .nodo-texto.hide
             p=texto
+                //- span 1
+                //- if linkBool
+            a(href=linkExtra)=linkText
 
 mixin tabButton(texto, ref, icono)
     li

@@ -6,6 +6,8 @@ html(lang="es")
         title Jon E. Eguiluz Resume
         link(rel="stylesheet", href="#{path_css}")
         //- Load Font awesome icons
+        script(src="./lib/modernizr-custom.js")
+
         link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
         //-  Load c3.css 
         link(href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" type="text/css")
@@ -20,12 +22,13 @@ html(lang="es")
                     +tabButton("Experiencia", "experiencia","fa-calendar")
                     +tabButton("Conocimientos", "conocimientos","fa-code")
                     +tabButton("Personal", "personal", "fa-file-text-o")
+            //- .clearfix
             .content
                 #tabs
                     #resumen
                         h1 Resumen
                         #datos-personales
-                            img(src="./img/avatar.jpeg")
+                            .img
                             .datos-texto
                                 p 
                                     span.label Nombre:
@@ -64,9 +67,9 @@ html(lang="es")
                             +nodo-historia("09/2006", "Erasmus en Polonia", "Proyecto de fin de carrera. El proyecto consistía en monitorizar una red y dar alarmas si algo dejaba de responder, luego descubrí Nagios. Polska dzięki!")
                             +nodo-historia("09/2007", "Mediateca Arriga Diocesanas", "Mi primer trabajo, mientras terminaba ciertos trámites con la universidad. Aquí adquirí paciencia y mano izquierda.")
                             +nodo-historia("09/2008", "Alegría-activity", "Trabajo en el que aprendí que hay que saber de todo en esta vida: Desde crear webs a taladrar una mesa para pasar un cable hasta la pantalla. ")
-                            +nodo-historia("12/2010", "Buala.net", "Adquirí conocimientos reales de desarrollo web. Y me enamoré del webDev y como algunos dicen me hice un jsHipster")
+                            +nodo-historia("12/2010", "Buala.net", "Junto con 2 socios creamos esta empresa, para poder trabajar como nosotros creíamos que se debía trabajar. Adquirí conocimientos reales de desarrollo web y me enamoré del front-end, como sudor y lágrimas he ido dominando el CSS y el JS.", "https://medium.com/@viroide/el-ciclo-de-buala-net-ef44f66b61bb", "(Para más info sobre el fin de buala.net)")
                             +nodo-historia("11/2015", "...", "Escucho ofertas.")
-                                        
+
                     #conocimientos.hide
                         h1 Conocimientos 
                         h2 Competencias de desarrollo web

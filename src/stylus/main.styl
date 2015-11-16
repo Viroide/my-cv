@@ -9,7 +9,8 @@ html, body
     height 100%
     width 100%
     font-family: 'Source Code Pro'
-/* Large */
+
+// Flex box !  
 .box
     height 100%
     width 100%
@@ -19,14 +20,26 @@ html, body
     .content 
         flexOrder(2)
         overflow auto
-    
+        box-sizing border-box
+
+// No flex box 
+.no-flexbox .box 
+    nav 
+        float left
+        height 100%
+    .content 
+        height 100%
+        margin 0
+        // margin-left 55px
+
+
 nav 
     background-color verde
     ul
         margin 0 
         padding 0 24px
         list-style none
-        height 100%
+        // height 100%
         li 
             text-align center
             margin 24px 0
@@ -45,8 +58,12 @@ nav
     #datos-personales
         &>*
             float left
-        img 
+        .img 
             width 160px
+            height 160px
+            background url("../img/avatar_sprite.png") 0 0 no-repeat
+            &:hover
+                background-position 0 -160px
         .datos-texto
             p 
                 margin-left 12px
@@ -135,15 +152,38 @@ nav
 // chart CSS 
 .c3-axis-x .tick 
     display none
+
+a 
+    color rosa
+    text-decoration none
     
 // media queries
 @media (max-width: 640px)
-    .box 
+    .flexbox .box 
         flexFlow(column, wrap)
         nav 
             ul 
                 flexDisplay()
                 flexJustify(space-around)
+    // no flexbox
+    .no-flexbox .box 
+        nav 
+            float none
+            height 50px
+            position fixed
+            top 0
+            left 0 
+            right 0
+            z-index 1000
+            text-align center
+            ul 
+                li
+                    float left
+                    margin 12px 24px
+        .content
+            float none
+            padding-top 50px
     #interest-links
         ul 
             padding 0  
+    
