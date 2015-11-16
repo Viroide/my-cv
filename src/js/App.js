@@ -11,18 +11,18 @@ window.myCv = window.myCv || {};
         ['django', 75],
         ['python', 70],
         ['git', 80],
-        ['gimp', 40],
-        ['linux', 70],
+        ['gimp', 40]
   ];
 
   myCv.competencias2 = [
-        ['ventas', 10], 
+        ['tareas administrativas', 60], 
         ['facturacion', 60], 
         ['paciencia', 90],
         ['humor', 99],
         ['frikismo', 80],
-        ['diseño', 20],
-        ['conducir', 75]
+        ['diseño', 1],
+        ['conducir', 75],
+        ['linux', 70]
   ];
 
   myCv.bootstrap = function () {
@@ -57,6 +57,7 @@ window.myCv = window.myCv || {};
           myCv.loadChartData(myCv.competencias2, myCv.charts[1]); 
         }
         document.getElementById(desireTabId).className = "";
+        document.getElementById("content").scrollTop = 0;
   };
   myCv.knowledgeChart = function(id, initial, chartNum){
     myCv.charts[chartNum] = c3.generate({

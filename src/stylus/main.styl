@@ -17,7 +17,7 @@ html, body
     flexDisplay()
     flexFlow(row, nowrap)
 
-    .content 
+    #content 
         flexOrder(2)
         overflow auto
         box-sizing border-box
@@ -27,7 +27,7 @@ html, body
     nav 
         float left
         height 100%
-    .content 
+    #content 
         height 100%
         margin 0
         // margin-left 55px
@@ -48,7 +48,7 @@ nav
                 color rosa
                 cursor pointer
 
-.content
+#content
     padding 22px
     background-color carne
     
@@ -103,7 +103,7 @@ nav
                         content " "
                         display block
                         width 4px
-                        height 250px
+                        height 350px
                         background-color black
                         position absolute
                         top 36px
@@ -111,9 +111,7 @@ nav
             &:last-child                
                 .nodo-circulo i.fa:after
                     background-color carne
-                    height 250px
-                    width 100%
-                    top 39px
+                    top 40px
             .nodo-titulo
                 color marron
                 margin-left 12px
@@ -141,6 +139,7 @@ nav
     #personal 
         small 
             color naranja
+            font-size 11px
 
                 
 // helper clases
@@ -180,7 +179,7 @@ a
                 li
                     float left
                     margin 12px 24px
-        .content
+        #content
             float none
             padding-top 50px
     #interest-links
