@@ -45,7 +45,7 @@ nav
             margin 24px 0
             .fa
                 font-size 28px
-                color rosa
+                color naranja
                 cursor pointer
 
 #content
@@ -85,6 +85,7 @@ nav
         .nodo-historia
             position relative
             padding 0 0 0 44px
+            cursor pointer
             &:after
                 clear:both
                 content " "
@@ -95,9 +96,9 @@ nav
                 position absolute
                 left 0 
                 top 0 
+                
                 i.fa
                     font-size 40px
-                    cursor pointer
                     background-color carne
                     &:after
                         content " "
@@ -129,13 +130,15 @@ nav
             .nodo-texto
                 margin-left 12px
                 color naranja
-            &:hover
-                .nodo-texto 
-                    display block
-                i.fa 
-                    color verde
+                display none
+            &:hover, &.selected
+                i.fa
+                    color rosa
                     &:after
-                        background-color verde
+                        background-color rosa
+            &.selected
+                .nodo-texto
+                    display block
     #personal 
         small 
             color naranja

@@ -16,7 +16,6 @@ window.myCv = window.myCv || {};
 
   myCv.competencias2 = [
         ['tareas administrativas', 60], 
-        ['facturacion', 60], 
         ['paciencia', 90],
         ['humor', 99],
         ['frikismo', 80],
@@ -27,13 +26,14 @@ window.myCv = window.myCv || {};
 
   myCv.bootstrap = function () {
     myCv.knowledgeChart("#chart", ["html5", 100], 0);
-    myCv.knowledgeChart("#chart2", ['scrum', 60], 1);
+    myCv.knowledgeChart("#chart2", ['scrum', 65], 1);
     if (window.location.hash!==""){
       myCv.tabChanger(window.location.hash.slice(1));
     }
     window.onhashchange = myCv.hashEventHandle; 
-    // recivo el evento en el cambio de hash por lo que no hace falta registrar el evento click
-    // document.getElementById("tab-selector").addEventListener("click", myCv.tabEventHandler);
+    Array.prototype.forEach.call(document.getElementsByClassName("nodo-historia"), function(elem){
+      elem.addEventListener("click", myCv.nodoClickEventHandler);
+    });
   };
   // Si cambio de tab al cambiar el hash ya no me hace falta este EventHandler
   // myCv.tabEventHandler =function(event){
@@ -42,6 +42,14 @@ window.myCv = window.myCv || {};
   //     myCv.tabChanger(desireTabId);
   //   }
   // };
+
+  myCv.nodoClickEventHandler = function(event){
+    console.log(event.currentTarget);
+    Array.prototype.forEach.call(document.getElementsByClassName("nodo-historia"), function(elem){
+      elem.className = "nodo-historia";
+    });
+    event.currentTarget.className = "nodo-historia selected";
+  };  
   myCv.hashEventHandle = function(){
     if (window.location.hash!==""){
       myCv.tabChanger(window.location.hash.slice(1));
@@ -72,6 +80,10 @@ window.myCv = window.myCv || {};
             max: 100,
             padding: {top: 0, bottom: 0}
           }
+        },
+        color: {
+            pattern: ['#F8555E', '#4C6A8D', '#0C9DA9', '#FBC38D', '#F14440', 
+                      '#172F3D', '#51ABB4', '#FBF7D7', '#FF8A51', '#BD4958']
         }
     });    
   };
