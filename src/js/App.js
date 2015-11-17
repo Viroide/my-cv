@@ -25,7 +25,7 @@ window.myCv = window.myCv || {};
       python: [['python 2.7', 80], ['python 3.0', 10]],
       gimp: [['abrir PSD y etraer imagenes', 80], ["edicion de fotos", 15]]
   };
-  
+
   myCv.competenciasTransversales = [
         ['scrum', 65],
         ['tareas administrativas', 60], 
@@ -36,7 +36,7 @@ window.myCv = window.myCv || {};
         ['conducir', 75],
         ['linux', 70]
   ];
-
+  // Funcion de entrada de la app, creamos los listeners los chart iniciales y poco mas. 
   myCv.bootstrap = function () {
     myCv.knowledgeChart("#chart", ["html5", 100], 0);
     myCv.knowledgeChart("#chart2", ['scrum', 65], 1);
@@ -57,18 +57,22 @@ window.myCv = window.myCv || {};
   //   }
   // };
 
+  //  para ver los detalles de cada nodo del historial
   myCv.nodoClickEventHandler = function(event){
-    console.log(event.currentTarget);
     Array.prototype.forEach.call(document.getElementsByClassName("nodo-historia"), function(elem){
       elem.className = "nodo-historia";
     });
     event.currentTarget.className = "nodo-historia selected";
   };  
+
+  // Evento de cambio de hash (#ancla)
   myCv.hashEventHandle = function(){
     if (window.location.hash!==""){
       myCv.tabChanger(window.location.hash.slice(1));
     }
   };
+
+  // cambiar de tab y lanzar el load de las graficas si corresponde
   myCv.tabChanger = function(desireTabId){
         var tabs = document.getElementById("tabs").childNodes;
         Array.prototype.map.call(tabs, function(tab){
@@ -81,6 +85,8 @@ window.myCv = window.myCv || {};
         document.getElementById(desireTabId).className = "";
         document.getElementById("content").scrollTop = 0;
   };
+
+  // Crear el/los charts iniciales con su conf
   myCv.knowledgeChart = function(id, initial, chartNum){
     myCv.charts[chartNum] = c3.generate({
         bindto: id,
@@ -102,6 +108,8 @@ window.myCv = window.myCv || {};
         }
     });    
   };
+
+  // Cargar los datos cada 500ms en el chart que toque.
   myCv.loadChartData = function(competencias, chart){
     competencias.map(function(elem, i){
       setTimeout(function () {
@@ -110,6 +118,8 @@ window.myCv = window.myCv || {};
     });
     
   };
+
+  // recargar los datos iniciales en el chart de competencias1 
   myCv.reloadChartInitialData = function(){
     myCv.charts[0].load({
           columns: myCv.competencias,
@@ -117,6 +127,8 @@ window.myCv = window.myCv || {};
         });
     document.getElementById("back").className = "hide";
   };
+
+  // Cargar los datos de cada subCompentecia
   myCv.loadSubcompetencias = function (d, element) { 
       if (myCv.subCompetencias[d.id]){
         myCv.charts[0].load({
