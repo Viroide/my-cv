@@ -1,7 +1,8 @@
 @import colores
 @import mixins
 @import url("https://fonts.googleapis.com/css?family=Source+Code+Pro")
-
+// @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+// @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
 
 
 html, body 
@@ -9,6 +10,10 @@ html, body
     height 100%
     width 100%
     font-family: 'Source Code Pro'
+    // font-family: 'Roboto Slab', serif;
+    color white
+    font-size 14px 
+    -webkit-font-smoothing: none;
 
 // Con Flex box !  
 .box
@@ -34,7 +39,7 @@ html, body
 
 // css de los botones de tabs
 nav 
-    background-color verde
+    background-color rojizo
     ul
         margin 0 
         padding 0 24px
@@ -53,7 +58,7 @@ nav
     background-color carne
     
     h1 
-        color marron
+        color blanco
     
     #datos-personales
         &>*
@@ -80,7 +85,7 @@ nav
                 font-size 28px
                 vertical-align middle
                 margin-right 8px
-                color rosa
+                color verde
     #historial
         .nodo-historia
             position relative
@@ -96,7 +101,7 @@ nav
                 position absolute
                 left 0 
                 top 0 
-                
+                color rojizo
                 i.fa
                     font-size 40px
                     background-color carne
@@ -105,7 +110,7 @@ nav
                         display block
                         width 4px
                         height 350px
-                        background-color black
+                        background-color rojizo
                         position absolute
                         top 36px
                         left 16px
@@ -114,7 +119,7 @@ nav
                     background-color carne
                     top 40px
             .nodo-titulo
-                color marron
+                color blanco
                 margin-left 12px
                 &:after
                     clear both 
@@ -129,13 +134,13 @@ nav
                         content ": "
             .nodo-texto
                 margin-left 12px
-                color naranja
+                color gris
                 display none
             &:hover, &.selected
                 i.fa
-                    color rosa
+                    color verde
                     &:after
-                        background-color rosa
+                        background-color verde
             &.selected
                 .nodo-texto
                     display block
@@ -144,20 +149,22 @@ nav
             div
                 float right 
                 cursor pointer
-                color rosa
+                color gris
             &:after
                 content " "
                 clear both 
                 display block
+        .charts 
+            color rojizo
    
 
 //  stylos generales
 small 
-    color naranja
+    color gris
     font-size 11px
 
 a 
-    color rosa
+    color gris
     text-decoration none
     
                 
