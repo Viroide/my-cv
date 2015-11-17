@@ -16,3 +16,7 @@ mixin tabButton(texto, ref, icono)
     li
         a(src=ref, href="#"+ref title=texto)
             i(tab=ref, class="fa "+icono)
+
+mixin li-formacion(link, texto)
+    li
+        a(href=link)=texto

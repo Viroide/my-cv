@@ -21,6 +21,7 @@ html(lang="es")
                     +tabButton("Resumen", "resumen", "fa-user")
                     +tabButton("Experiencia", "experiencia","fa-calendar")
                     +tabButton("Conocimientos", "conocimientos","fa-code")
+                    +tabButton("Formación impartida", "docencia","fa-graduation-cap")
                     +tabButton("Personal", "personal", "fa-file-text-o")
             //- .clearfix
             #content.content
@@ -86,6 +87,16 @@ html(lang="es")
                         h2 Competencias transversales
                         #chart-holder-2
                             #chart2.charts
+                    #docencia.hide
+                        h1 Cursos/tallers impartidos
+
+                        ul
+                            +li-formacion("http://viroide.github.io/webDev2015/", "WebDev en 2015")
+                            +li-formacion("http://es.slideshare.net/Viroide/twevelop", "Twevelop: Twitter API for developers")
+                            +li-formacion("http://es.slideshare.net/Viroide/brevsima-introduccin-a-la-usabilidad", "Brevísima introducción a la usabilidad")
+
+
+                    
                     #personal.hide
                         h1 Personal
                         #personal
