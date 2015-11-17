@@ -59,6 +59,8 @@ html(lang="es")
 
                     #experiencia.hide
                         h1 Experiencia
+                        p
+                            small Cada nodo tiene más detalle, haz click en ellos para verlos. 
                         #historial
                             +nodo-historia("07/1984", "Nacimiento", "En este periodo aprendí a gatear, luego a andar y hablar. Hoy en día creo que he alcanzado una maestría en estas áreas.")
                             +nodo-historia("09/1987", "Ikastola Olabide", "Aquí aprendí a leer, matemáticas, algo de histora, empecé con los idiomas... Competencias básicas digamos.")
@@ -73,7 +75,13 @@ html(lang="es")
                     #conocimientos.hide
                         h1 Conocimientos 
                         h2 Competencias de desarrollo web
+                        p 
+                            small Las competencias tienen más detalle, haz click sobre las columnas y luego pulsa atras, para volver.
                         #chart-holder
+                            #back.hide
+                                div
+                                    i.fa.fa-arrow-circle-left
+                                    span Atras
                             #chart
                         h2 Competencias transversales
                         #chart-holder-2
@@ -82,8 +90,7 @@ html(lang="es")
                         h1 Personal
                         #personal
                             p
-                                small.
-                                    Esta sección es solo para que me conozcas un poco, si solo te interesan los datos cuantitativos vuelve al resto de pestañas.
+                                small Esta sección es solo para que me conozcas un poco, si solo te interesan los datos cuantitativos vuelve al resto de pestañas.
                             p.
                                 Buenas, me llamo Jon, nací y crecí en Vitoria-Gasteiz ahora tengo 31 años y soy un trabajador competente, por lo menos en mi campo: el <strong>Desarrollo web</strong>. Si has visto la pestaña de <a href="#experiencia">experiencia</a> ya habrás visto donde he trabajado y estudiado así que no entraré en muchos detalles sobre esos temas. Aquí lo que quiero es que me conozcas como persona, ya que espero entrar a trabajar con tu equipo creo que es importante no solo conocer mis <a href="#conocimientos">skills </a> si no también mi personalidad. Ya habrás entrevisto que soy un friky y que valoro mucho el sentido del humor. Pero hay muchas más cosa que necesitas saber para contratarme y estar seguro que encajaré con vosotros (Aunque sea imposible estar seguro de algo así al 100%, intentaré convencerte hasta el 99% xD). 
                             p.

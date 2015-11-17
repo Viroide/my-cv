@@ -3,6 +3,7 @@ window.myCv = window.myCv || {};
 (function (myCv) {
   myCv.charts = [chart1=null, chart2=null];
   myCv.competencias = [
+        ["html5", 100],
         ['css', 90],
         ['js', 90],
         ['d3', 35],
@@ -10,11 +11,23 @@ window.myCv = window.myCv || {};
         ['gulp', 85],
         ['django', 75],
         ['python', 70],
-        ['git', 80],
         ['gimp', 40]
   ];
 
-  myCv.competencias2 = [
+  myCv.subCompetencias = {
+      html5: [['html5', 90], ['jade', 90], ['xhtml4.1', 75]],
+      css: [['css vanilla', 90], ['stylus', 75], ['Saas', 50]],
+      js: [['js vanilla', 70], ['jQuery', 90], ['react', 35]],
+      d3: [['pure d3', 20], ['d3 +c3', 75]],
+      git: [['git del dia a dia', 80], ['git rebase', 60], ['github', 75],   ["Gitlab", 80]],
+      gulp: [['gulp', 85], ['grunt', 85], ['webapp', 40]],
+      django: [['programar en django', 75], ['configurar apache2/unicorn', 40]],
+      python: [['python 2.7', 80], ['python 3.0', 10]],
+      gimp: [['abrir PSD y etraer imagenes', 80], ["edicion de fotos", 15]]
+  };
+  
+  myCv.competenciasTransversales = [
+        ['scrum', 65],
         ['tareas administrativas', 60], 
         ['paciencia', 90],
         ['humor', 99],
@@ -34,6 +47,7 @@ window.myCv = window.myCv || {};
     Array.prototype.forEach.call(document.getElementsByClassName("nodo-historia"), function(elem){
       elem.addEventListener("click", myCv.nodoClickEventHandler);
     });
+    document.getElementById("back").addEventListener("click", myCv.reloadChartInitialData);
   };
   // Si cambio de tab al cambiar el hash ya no me hace falta este EventHandler
   // myCv.tabEventHandler =function(event){
@@ -62,7 +76,7 @@ window.myCv = window.myCv || {};
         });
         if (desireTabId==="conocimientos"){
           myCv.loadChartData(myCv.competencias, myCv.charts[0]); 
-          myCv.loadChartData(myCv.competencias2, myCv.charts[1]); 
+          myCv.loadChartData(myCv.competenciasTransversales, myCv.charts[1]); 
         }
         document.getElementById(desireTabId).className = "";
         document.getElementById("content").scrollTop = 0;
@@ -72,7 +86,8 @@ window.myCv = window.myCv || {};
         bindto: id,
         data: {
           columns: [initial],
-          type: 'bar'
+          type: 'bar',
+          onclick: myCv.loadSubcompetencias
         },
         bar: {width: {ratio: 0.9 }},
         axis: {
@@ -94,6 +109,23 @@ window.myCv = window.myCv || {};
       }, 500*i);
     });
     
+  };
+  myCv.reloadChartInitialData = function(){
+    myCv.charts[0].load({
+          columns: myCv.competencias,
+          unload: myCv.charts[0].columns
+        });
+    document.getElementById("back").className = "hide";
+  };
+  myCv.loadSubcompetencias = function (d, element) { 
+      if (myCv.subCompetencias[d.id]){
+        myCv.charts[0].load({
+          columns: myCv.subCompetencias[d.id],
+          unload: myCv.charts[0].columns
+        });
+        document.getElementById("back").className = " ";
+      }
+
   };
 }(window.myCv));
 
