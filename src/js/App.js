@@ -36,6 +36,7 @@ window.myCv = window.myCv || {};
         ['conducir', 75],
         ['linux', 70]
   ];
+  
   // Funcion de entrada de la app, creamos los listeners los chart iniciales y poco mas. 
   myCv.bootstrap = function () {
     myCv.knowledgeChart("#chart", ["html5", 100], 0);
@@ -49,6 +50,7 @@ window.myCv = window.myCv || {};
     });
     document.getElementById("back").addEventListener("click", myCv.reloadChartInitialData);
   };
+
   // Si cambio de tab al cambiar el hash ya no me hace falta este EventHandler
   // myCv.tabEventHandler =function(event){
   //   if (event.target !== event.currentTarget && event.target.getAttribute("tab") ) {
