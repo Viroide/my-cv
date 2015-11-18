@@ -5,6 +5,7 @@ html(lang="es")
         meta(name="viewport", content="width=device-width")
         title Jon E. Eguiluz Resume
         link(rel="stylesheet", href="#{path_css}")
+        link(rel="stylesheet" media="print" href="#{path_css_print}")
         //- Load Font awesome icons
         script(src="./lib/modernizr-custom.js")
 
@@ -30,6 +31,7 @@ html(lang="es")
                         h1 Resumen
                         #datos-personales
                             .img
+                            img(src="./img/avatar.jpeg").hide
                             .datos-texto
                                 p 
                                     span.label Nombre:
