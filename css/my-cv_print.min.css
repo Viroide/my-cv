@@ -1,0 +1,8 @@
+/**
+ * my-cv - My resume representation on a web 
+ * @version v0.0.1
+ * @author Jon E. Eguiluz
+ * @license ISC
+ */
+nav,#conocimientos *,.nodo-circulo,small{display:none}a{color:#000}#datos-personales img{float:left;margin:0 12px}a:after{content:" - " attr(href);font-size:80%}.clearfix{clear:both}@page{margin:2.5cm}/*# sourceMappingURL=print.css.map */
+/*# sourceMappingURL=my-cv_print.min.css.map */
