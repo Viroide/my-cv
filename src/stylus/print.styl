@@ -1,29 +1,27 @@
-nav
-    display none  
+// Quitar elementos que sobran al imprimir 
+nav, #conocimientos *, .nodo-circulo, small
+    display none
+
+// los links a negro 
 a
     color black
 
-.nodo-circulo
-    display none 
-  
-#conocimientos 
-    *
-        display none 
-small 
-    display none
-    
+// Cambiamos el sprite animado por una imagen
 #datos-personales
     img 
         float left 
         margin 0 12px
 
+// Que en los links se vea la url en cuestion
  a:after 
     content: " - "attr(href)
     font-size: 80%;
 
+// sigo necesitando este mini clearfix
 .clearfix
         clear both
-        
+
+// Un poquito de margen para que quede mejor
 @page 
     margin 2.5cm
     
