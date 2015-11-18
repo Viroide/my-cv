@@ -87,17 +87,34 @@ gulp.task('css', function() {
     .pipe(rename({ basename: pkg.name}))
     .pipe(gulp.dest(distPath+'/css/'))
     .pipe(livereload());
+});
 
+gulp.task('css-print-build', function() {
+  return gulp.src(srcPath+'/stylus/print.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({ compress: true }))
+    .pipe(rename({ basename: pkg.name  , suffix:"_print.min"}))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(distPath+'/css/'));
+});
+
+gulp.task('css-print', function() {
+  return gulp.src(srcPath+'/stylus/print.styl')
+    .pipe(stylus({linenos: true}))
+    .pipe(rename({ basename: pkg.name, suffix: "_print"}))
+    .pipe(gulp.dest(distPath+'/css/'))
+    .pipe(livereload());
 });
 
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch(srcPath+'/jade/*.jade', ['html']);
-  gulp.watch(srcPath+'/stylus/*.styl', ['css']);
+  gulp.watch(srcPath+'/stylus/*.styl', ['css', 'css-print']);
   gulp.watch(srcPath+'/js/*.js', ['js']);
 });
 
 
-gulp.task('server', ['js-build', 'css-build', 'html-build']);
+gulp.task('build', ['js-build', 'css-build', 'html-build', 'css-print-build']);
 gulp.task('dev', ['js', 'css', 'html']);
 gulp.task('default', ['js', 'css', 'html']);

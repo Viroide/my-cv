@@ -4,208 +4,209 @@
 // @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 // @import url("https://fonts.googleapis.com/css?family=Roboto+Slab:400,700");
 
-
-html, body 
-    margin 0
-    height 100%
-    width 100%
-    font-family: 'Source Code Pro'
-    // font-family: 'Roboto Slab', serif;
-    color white
-    font-size 14px 
-    -webkit-font-smoothing: none;
-
-// Con Flex box !  
-.box
-    height 100%
-    width 100%
-    flexDisplay()
-    flexFlow(row, nowrap)
-
-    #content 
-        flexOrder(2)
-        overflow auto
-        box-sizing border-box
-
-// Sin flex box 
-.no-flexbox .box 
-    nav 
-        float left
-        height 100%
-    #content 
-        height 100%
+@media screen
+    html, body 
         margin 0
-        // margin-left 55px
+        height 100%
+        width 100%
+        font-family: 'Source Code Pro'
+        // font-family: 'Roboto Slab', serif;
+        color white
+        font-size 14px 
+        -webkit-font-smoothing: none;
 
-// css de los botones de tabs
-nav 
-    background-color rojizo
-    ul
-        margin 0 
-        padding 0 24px
-        list-style none
-        // height 100%
-        li 
-            text-align center
-            margin 24px 0
-            .fa
-                font-size 28px
-                color naranja
-                cursor pointer
+    // Con Flex box !  
+    .box
+        height 100%
+        width 100%
+        flexDisplay()
+        flexFlow(row, nowrap)
 
-#content
-    padding 22px
-    background-color carne
-    
-    h1 
-        color blanco
-    
-    #datos-personales
-        &>*
-            float left
-        .img 
-            width 160px
-            height 160px
-            background url("../img/avatar_sprite.png") 0 0 no-repeat
-            &:hover
-                background-position 0 -160px
-        .datos-texto
-            p 
-                margin-left 12px
-                .label
-                    font-weight bold
-    #interest-links
-        ul li 
-            list-style none  
-            margin-bottom 8px          
-            a
-                line-height 28px
-                display inline-block
-            i.fa
-                font-size 28px
-                vertical-align middle
-                margin-right 8px
-                color verde
-    #historial
-        .nodo-historia
-            position relative
-            padding 0 0 0 44px
-            cursor pointer
-            &:after
-                clear:both
-                content " "
-                display block
-            &>*
-                float left         
-            .nodo-circulo
-                position absolute
-                left 0 
-                top 0 
-                color rojizo
-                i.fa
-                    font-size 40px
-                    background-color carne
-                    &:after
-                        content " "
-                        display block
-                        width 4px
-                        height 350px
-                        background-color rojizo
-                        position absolute
-                        top 36px
-                        left 16px
-            &:last-child                
-                .nodo-circulo i.fa:after
-                    background-color carne
-                    top 40px
-            .nodo-titulo
-                color blanco
-                margin-left 12px
-                &:after
-                    clear both 
-                    display block
-                    content " "
-                    height 2px
-                    width 100%
-                .fecha
-                    margin-right 6px
-                    font-weight bold
-                    &:after
-                        content ": "
-            .nodo-texto
-                margin-left 12px
-                color gris
-                display none
-            &:hover, &.selected
-                i.fa
-                    color verde
-                    &:after
-                        background-color verde
-            &.selected
-                .nodo-texto
-                    display block
-    #conocimientos
-        #back 
-            div
-                float right 
-                cursor pointer
-                color gris
-            &:after
-                content " "
-                clear both 
-                display block
-        .charts 
-            color rojizo
-   
+        #content 
+            flexOrder(2)
+            overflow auto
+            box-sizing border-box
 
-//  stylos generales
-small 
-    color gris
-    font-size 11px
-
-a 
-    color gris
-    text-decoration none
-    
-                
-// helper clases
-.hide
-    display none
-.clearfix
-    clear both
-
-// chart CSS 
-.c3-axis-x .tick 
-    display none
-
-    
-// media queries
-@media (max-width: 640px)
-    .flexbox .box 
-        flexFlow(column, wrap)
-        nav 
-            ul 
-                flexDisplay()
-                flexJustify(space-around)
-    // no flexbox
+    // Sin flex box 
     .no-flexbox .box 
         nav 
-            float none
-            height 50px
-            position fixed
-            top 0
-            left 0 
-            right 0
-            z-index 1000
-            text-align center
+            float left
+            height 100%
+        #content 
+            height 100%
+            margin 0
+            // margin-left 55px
+
+    // css de los botones de tabs
+    nav 
+        background-color rojizo
+        ul
+            margin 0 
+            padding 0 24px
+            list-style none
+            // height 100%
+            li 
+                text-align center
+                margin 24px 0
+                .fa
+                    font-size 28px
+                    color naranja
+                    cursor pointer
+
+    #content
+        padding 22px
+        background-color carne
+        
+        h1 
+            color blanco
+        
+        #datos-personales
+            &>*
+                float left
+            .img 
+                width 160px
+                height 160px
+                background url("../img/avatar_sprite.png") 0 0 no-repeat
+                &:hover
+                    background-position 0 -160px
+            .datos-texto
+                float left
+                p 
+                    margin-left 12px
+                    .label
+                        font-weight bold
+        #interest-links
+            ul li 
+                list-style none  
+                margin-bottom 8px          
+                a
+                    line-height 28px
+                    display inline-block
+                i.fa
+                    font-size 28px
+                    vertical-align middle
+                    margin-right 8px
+                    color verde
+        #historial
+            .nodo-historia
+                position relative
+                padding 0 0 0 44px
+                cursor pointer
+                &:after
+                    clear:both
+                    content " "
+                    display block
+                &>*
+                    float left         
+                .nodo-circulo
+                    position absolute
+                    left 0 
+                    top 0 
+                    color rojizo
+                    i.fa
+                        font-size 40px
+                        background-color carne
+                        &:after
+                            content " "
+                            display block
+                            width 4px
+                            height 350px
+                            background-color rojizo
+                            position absolute
+                            top 36px
+                            left 16px
+                &:last-child                
+                    .nodo-circulo i.fa:after
+                        background-color carne
+                        top 40px
+                .nodo-titulo
+                    color blanco
+                    margin-left 12px
+                    &:after
+                        clear both 
+                        display block
+                        content " "
+                        height 2px
+                        width 100%
+                    .fecha
+                        margin-right 6px
+                        font-weight bold
+                        &:after
+                            content ": "
+                .nodo-texto
+                    margin-left 12px
+                    color gris
+                    display none
+                &:hover, &.selected
+                    i.fa
+                        color verde
+                        &:after
+                            background-color verde
+                &.selected
+                    .nodo-texto
+                        display block
+        #conocimientos
+            #back 
+                div
+                    float right 
+                    cursor pointer
+                    color gris
+                &:after
+                    content " "
+                    clear both 
+                    display block
+            .charts 
+                color rojizo
+       
+
+    //  stylos generales
+    small 
+        color gris
+        font-size 11px
+
+    a 
+        color gris
+        text-decoration none
+        
+                    
+    // helper clases
+    .hide
+        display none
+    .clearfix
+        clear both
+
+    // chart CSS 
+    .c3-axis-x .tick 
+        display none
+
+        
+    // media queries
+    @media (max-width: 640px)
+        .flexbox .box 
+            flexFlow(column, wrap)
+            nav 
+                ul 
+                    flexDisplay()
+                    flexJustify(space-around)
+        // no flexbox
+        .no-flexbox .box 
+            nav 
+                float none
+                height 50px
+                position fixed
+                top 0
+                left 0 
+                right 0
+                z-index 1000
+                text-align center
+                ul 
+                    li
+                        float left
+                        margin 12px 24px
+            #content
+                float none
+                padding-top 50px
+        #interest-links
             ul 
-                li
-                    float left
-                    margin 12px 24px
-        #content
-            float none
-            padding-top 50px
-    #interest-links
-        ul 
-            padding 0  
-    
+                padding 0  
+        

@@ -2,12 +2,14 @@
   "debug":{
     "path_js":  "./js/my-cv.js",
     "path_css":"./css/my-cv.css",
-    "livereload": true
+    "path_css_print":"./css/my-cv_print.css",
+    "debug": true
   },
   "build":{
     "path_js":  "./js/my-cv.min.js",
     "path_css":"./css/my-cv.min.css",
-    "livereload": false
+    "path_css_print":"./css/my-cv_print.min.css",
+    "debug": false
   },
   "srcPath" :"./src",
   "distPath" :"./dist"
