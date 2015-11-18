@@ -106,7 +106,7 @@ window.myCv = window.myCv || {};
         },
         color: {
             pattern: ['#F8555E', '#4C6A8D', '#0C9DA9', '#FBC38D', '#F14440', 
-                      '#172F3D', '#51ABB4', '#FBF7D7', '#FF8A51', '#BD4958']
+                      '#172F3D', '#51ABB4', '#FBF7D7', '#BD4958', '#FF8A51' ]
         }
     });    
   };
