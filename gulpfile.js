@@ -116,5 +116,5 @@ gulp.task('watch', function() {
 
 
 gulp.task('build', ['js-build', 'css-build', 'html-build', 'css-print-build']);
-gulp.task('dev', ['js', 'css', 'html']);
-gulp.task('default', ['js', 'css', 'html']);
+gulp.task('dev', ['js', 'css', 'css-print', 'html']);
+gulp.task('default', ['js', 'css', 'css-print', 'html']);
