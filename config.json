@@ -3,13 +3,13 @@
     "path_js":  "./js/my-cv.js",
     "path_css":"./css/my-cv.css",
     "path_css_print":"./css/my-cv_print.css",
-    "livereload": true
+    "debug": true
   },
   "build":{
     "path_js":  "./js/my-cv.min.js",
     "path_css":"./css/my-cv.min.css",
     "path_css_print":"./css/my-cv_print.min.css",
-    "livereload": false
+    "debug": false
   },
   "srcPath" :"./src",
   "distPath" :"./dist"
