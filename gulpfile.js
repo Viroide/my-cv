@@ -108,6 +108,11 @@ gulp.task('css-print', function() {
     .pipe(livereload());
 });
 
+gulp.task('gh-pages', function() {
+  return gulp.src(distPath)
+  .pipe(gulpCopy("./"));
+});
+
 gulp.task('watch', function() {
   livereload.listen();
   gulp.watch(srcPath+'/jade/*.jade', ['html']);
