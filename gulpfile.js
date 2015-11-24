@@ -109,8 +109,8 @@ gulp.task('css-print', function() {
 });
 
 gulp.task('gh-pages', function() {
-  return gulp.src(distPath+'/**/*')
-  .pipe(gulpCopy("./"));
+  return gulp.src([distPath+'/**/*'])
+    .pipe(gulp.dest('./'));
 });
 
 gulp.task('watch', function() {
