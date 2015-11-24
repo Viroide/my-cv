@@ -8,8 +8,6 @@ mixin nodo-historia(fecha, titulo, texto, linkExtra, linkText)
                 span= titulo
         .nodo-texto
             p=texto
-                //- span 1
-                //- if linkBool
             a(href=linkExtra)=linkText
 
 mixin tabButton(texto, ref, icono)

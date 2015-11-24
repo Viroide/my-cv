@@ -10,7 +10,8 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload'),
     watch       = require('gulp-watch'),
     header      = require('gulp-header'),
-    jade        = require('gulp-jade');
+    jade        = require('gulp-jade'),
+    gulpCopy    = require('gulp-copy');
 
 var pkg         = require('./package.json'),
     config      = require('./config.json');

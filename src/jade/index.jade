@@ -2,23 +2,28 @@
 html(lang="es")
     head
         meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Jon E. Eguiluz Resume
+        //- My own styles
         link(rel="stylesheet", href="#{path_css}")
-        //- if debug 
         link(rel="stylesheet" media="print" href="#{path_css_print}")
-        //- Load Font awesome icons
+        //- Load modernzr for the awesome! 
         script(src="./lib/modernizr-custom.js")
 
-        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
+        //- Load Font awesome icons
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css")
         //-  Load c3.css 
-        link(href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" type="text/css")
+        link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css", type="text/css")
+        //- Load MDL
+        link(rel="stylesheet", href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-deep_purple.min.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+
 
     include ./mixins.jade
 
     body
-        .box
-            nav
+        //- .box
+            //- nav
                 ul#tab-selector
                     +tabButton("Resumen", "resumen", "fa-user")
                     +tabButton("Experiencia", "experiencia","fa-calendar")
@@ -26,95 +31,147 @@ html(lang="es")
                     +tabButton("Formación impartida", "docencia","fa-graduation-cap")
                     +tabButton("Personal", "personal", "fa-file-text-o")
             //- .clearfix
-            #content.content
-                #tabs
-                    #resumen
-                        h1 Resumen
-                        #datos-personales
-                            .img
-                            img(src="./img/avatar.jpeg").hide
-                            .datos-texto
-                                p 
-                                    span.label Nombre:
-                                    span  Jon E. Eguiluz 
-                                p
-                                    span.label Email: 
-                                    a(href="mailto:jon.e.eguiluz@gmail.com") jon.e.eguiluz@gmail.com
-                                p 
-                                    span.label Teléfono:
-                                    span  +34 696441499
-                                p 
-                                    span.label Fecha de Nacimiento:
-                                    span  30/07/1984
-                        .clearfix
 
-                        #interest-links
-                            h2 Links de interés:
-                            ul
-                                li
-                                    i.fa.fa-github
-                                    a(href="https://github.com/Viroide") github
-                                li
-                                    i.fa.fa-twitter
-                                    a(href="https://twitter.com/viroide") twitter
-                                li
-                                    i.fa.fa-linkedin
-                                    a(href="https://es.linkedin.com/in/jon-e-eguiluz-6b488914") linkedIn
+        .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+            header.mdl-layout__header
 
-                    #experiencia.hide
-                        h1 Experiencia
-                        p
-                            small Cada nodo tiene más detalle, haz click en ellos para verlos. 
-                        #historial
-                            +nodo-historia("07/1984", "Nacimiento", "En este periodo aprendí a gatear, luego a andar y hablar. Hoy en día creo que he alcanzado una maestría en estas áreas.")
-                            +nodo-historia("09/1987", "Ikastola Olabide", "Aquí aprendí a leer, matemáticas, algo de histora, empecé con los idiomas... Competencias básicas digamos.")
-                            +nodo-historia("09/2001", "Diocesanas Arriaga (2º Bachiller)", "Aquí me preparé la selectividad. Y pude elegir lo que siempre supe que quería hacer: Aprender a darles ordenes complejas a las máquinas. MUAHHAHAH!")
-                            +nodo-historia("09/2002", "Mondragón Unibertsitatea (Ing. Tec. Informática de Sistemas)", "Se me revelaron las bases de la informática. Arquitectura de Software y Desarrollo Web eran mis asignaturas favoritas.")
-                            +nodo-historia("09/2006", "Erasmus en Polonia", "Proyecto de fin de carrera. El proyecto consistía en monitorizar una red y dar alarmas si algo dejaba de responder, luego descubrí Nagios. Polska dzięki!")
-                            +nodo-historia("09/2007", "Mediateca Arriga Diocesanas", "Mi primer trabajo, mientras terminaba ciertos trámites con la universidad. Aquí adquirí paciencia y mano izquierda.")
-                            +nodo-historia("09/2008", "Alegría-activity", "Trabajo en el que aprendí que hay que saber de todo en esta vida: Desde crear webs a taladrar una mesa para pasar un cable hasta la pantalla. ")
-                            +nodo-historia("12/2010", "Buala.net", "Junto con 2 socios creamos esta empresa, para poder trabajar como nosotros creíamos que se debía trabajar. Adquirí conocimientos reales de desarrollo web y me enamoré del front-end, con sudor y lágrimas he ido dominando el CSS y el JS.", "https://medium.com/@viroide/el-ciclo-de-buala-net-ef44f66b61bb", "(Para más info sobre el fin de buala.net)")
-                            +nodo-historia("11/2015", "...", "Escucho ofertas. (Aquí podría figurar tu empresa)")
+                div.mdl-layout__header-row
+                    span.mdl-layout-title Jon E. Eguiluz CV
+                    .mdl-layout-spacer
+                    nav.mdl-navigation.mdl-layout--large-screen-only
+                        a(href="#resumen").mdl-navigation__link
+                            i.material-icons face 
+                            span Resumen
+                        a(href="#experiencia").mdl-navigation__link
+                            i.material-icons archive 
+                            span Experiencia
+                        a(href="#conocimientos").mdl-navigation__link
+                            i.material-icons poll 
+                            span Conocimientos
+                        a(href="#docencia").mdl-navigation__link
+                            i.material-icons school 
+                            span Formación
+                        a(href="#personal").mdl-navigation__link
+                            i.material-icons description 
+                            span Personal
+            .mdl-layout__drawer
+                span.mdl-layout-title Secciones
+                nav.mdl-navigation
+                    a(href="#resumen").mdl-navigation__link
+                        i.material-icons face 
+                        span Resumen
+                    a(href="#experiencia").mdl-navigation__link
+                        i.material-icons archive 
+                        span Experiencia
+                    a(href="#conocimientos").mdl-navigation__link
+                        i.material-icons poll 
+                        span Conocimientos
+                    a(href="#docencia").mdl-navigation__link
+                        i.material-icons school 
+                        span Formación
+                    a(href="#personal").mdl-navigation__link
+                        i.material-icons description 
+                        span Personal
+            main.mdl-layout__content
+            
+                #content.content
+                    #tabs
+                        #resumen
+                            h1 Resumen
+                            //- button.mdl-button.mdl-js-button.mdl-button--raised.mdl-button--colored yei! 
 
-                    #conocimientos.hide
-                        h1 Conocimientos 
-                        h2 Competencias de desarrollo web
-                        p 
-                            small Las competencias tienen más detalle, haz click sobre las columnas y luego pulsa atras, para volver.
-                        #chart-holder
-                            #back.hide
-                                div
-                                    i.fa.fa-arrow-circle-left
-                                    span Atras
-                            #chart.charts
-                        h2 Competencias transversales
-                        #chart-holder-2
-                            #chart2.charts
-                    #docencia.hide
-                        h1 Cursos/tallers impartidos
+                            #datos-personales
+                                .img
+                                img(src="./img/avatar.jpeg").hide
+                                .datos-texto
+                                    p 
+                                        span.label Nombre:
+                                        span  Jon E. Eguiluz 
+                                    p
+                                        span.label Email: 
+                                        a(href="mailto:jon.e.eguiluz@gmail.com") jon.e.eguiluz@gmail.com
+                                    p 
+                                        span.label Teléfono:
+                                        span  +34 696441499
+                                    p 
+                                        span.label Fecha de Nacimiento:
+                                        span  30/07/1984
+                            .clearfix
+                            //-  TODO: añadir info extra
+                            //- #datos-generales
+                            //-     h3 Info extra 
+                            //-         ul
+                            //-             li Disponibilidad inmediata
+                            //-             li 
+                            //-             li
+                            //-             li
+                            #interest-links
+                                h3 Links de interés:
+                                ul
+                                    li
+                                        i.fa.fa-github
+                                        a(href="https://github.com/Viroide") github
+                                    li
+                                        i.fa.fa-twitter
+                                        a(href="https://twitter.com/viroide") twitter
+                                    li
+                                        i.fa.fa-linkedin
+                                        a(href="https://es.linkedin.com/in/jon-e-eguiluz-6b488914") linkedIn
 
-                        ul
-                            +li-formacion("http://viroide.github.io/webDev2015/", "WebDev en 2015")
-                            +li-formacion("http://es.slideshare.net/Viroide/twevelop", "Twevelop: Twitter API for developers")
-                            +li-formacion("http://es.slideshare.net/Viroide/brevsima-introduccin-a-la-usabilidad", "Brevísima introducción a la usabilidad")
-
-
-                    
-                    #personal.hide
-                        h1 Personal
-                        #personal
+                        #experiencia.hide
+                            h1 Experiencia
                             p
-                                small Esta sección es solo para que me conozcas un poco, si solo te interesan los datos cuantitativos vuelve al resto de pestañas.
-                            p.
-                                Buenas, me llamo Jon, nací y crecí en Vitoria-Gasteiz ahora tengo 31 años y soy un trabajador competente, por lo menos en mi campo: el <strong>Desarrollo web</strong>. Si has visto la pestaña de <a href="#experiencia">experiencia</a> ya habrás visto donde he trabajado y estudiado así que no entraré en muchos detalles sobre esos temas. Aquí lo que quiero es que me conozcas como persona, ya que espero entrar a trabajar con tu equipo creo que es importante no solo conocer mis <a href="#conocimientos">skills </a> si no también mi personalidad. Ya habrás entrevisto que soy un friki y que valoro mucho el sentido del humor. Pero hay muchas más cosa que necesitas saber para contratarme y estar seguro que encajaré con vosotros (Aunque sea imposible estar seguro de algo así al 100%, intentaré convencerte hasta el 99% xD). 
-                            p.
-                                Me considero una persona <strong>alegre</strong>, <strong>amistosa</strong>, que suelo caer bien a la gente y que no tengo problemas en trabajar en equipo.
-                            p.
-                                Por otro lado soy el tipo de persona que siempre intenta mirar las cosas desde una perspectiva diferente a la mayoría. Si quieres un currela que obedezca sin pensar tal vez no deberías contratarme. Me gusta discutir las cosas antes de aceptarlas porque sí. Por discutir me refiero a debatir/dialogar no a soltar gritos ni a lanzar teclados sobre la mesa. Soy bastante calmado y no entro en furia facilmente, ni me tomo las cosas personalmente. 
-                            p.
-                                <strong>Me gusta trabajar</strong>, esto sonará a frase para CV pero es la pura verdad, cuando un proyecto me gusta me encanta picar código y se me pasan las horas volando. Como buen programador, las tareas repetivas me matan, así que suelo invertir tiempo en no tener que volver a realizarlas, a esto algunos lo llaman <strong>automatizar tareas repetitivas</strong>, yo lo llamo no vuelvo a pasarme una mañana haciendo esto ni loco.
-                            p.
-                                Para conocerme más lo mejor es vernos en persona o por videoconferencia, así que tendremos que arreglar una reunión, para ello contacta conmigo en cualquiera de mis formas de contacto listadas en <a href="#resumen">mi resumen</a>.
+                                small Cada nodo tiene más detalle, haz click en ellos para verlos. 
+                            #historial
+                                +nodo-historia("07/1984", "Nacimiento", "En este periodo aprendí a gatear, luego a andar y hablar. Hoy en día creo que he alcanzado una maestría en estas áreas.")
+                                +nodo-historia("09/1987", "Ikastola Olabide", "Aquí aprendí a leer, matemáticas, algo de histora, empecé con los idiomas... Competencias básicas digamos.")
+                                +nodo-historia("09/2001", "Diocesanas Arriaga (2º Bachiller)", "Aquí me preparé la selectividad. Y pude elegir lo que siempre supe que quería hacer: Aprender a darles ordenes complejas a las máquinas. MUAHHAHAH!")
+                                +nodo-historia("09/2002", "Mondragón Unibertsitatea (Ing. Tec. Informática de Sistemas)", "Se me revelaron las bases de la informática. Arquitectura de Software y Desarrollo Web eran mis asignaturas favoritas.")
+                                +nodo-historia("09/2006", "Erasmus en Polonia", "Proyecto de fin de carrera. El proyecto consistía en monitorizar una red y dar alarmas si algo dejaba de responder, luego descubrí Nagios. Polska dzięki!")
+                                +nodo-historia("09/2007", "Mediateca Arriga Diocesanas", "Mi primer trabajo, mientras terminaba ciertos trámites con la universidad. Aquí adquirí paciencia y mano izquierda.")
+                                +nodo-historia("09/2008", "Alegría-activity", "Trabajo en el que aprendí que hay que saber de todo en esta vida: Desde crear webs a taladrar una mesa para pasar un cable hasta la pantalla. ")
+                                +nodo-historia("12/2010", "Buala.net", "Junto con 2 socios creamos esta empresa, para poder trabajar como nosotros creíamos que se debía trabajar. Adquirí conocimientos reales de desarrollo web y me enamoré del front-end, con sudor y lágrimas he ido dominando el CSS y el JS.", "https://medium.com/@viroide/el-ciclo-de-buala-net-ef44f66b61bb", "(Para más info sobre el fin de buala.net)")
+                                +nodo-historia("11/2015", "...", "Escucho ofertas. (Aquí podría figurar tu empresa)")
+
+                        #conocimientos.hide
+                            h1 Conocimientos 
+                            h2 Competencias de desarrollo web
+                            p 
+                                small Las competencias tienen más detalle, haz click sobre las columnas y luego pulsa atras, para volver.
+                            #chart-holder
+                                #back.hide
+                                    div
+                                        i.fa.fa-arrow-circle-left
+                                        span Atras
+                                #chart.charts
+                            h2 Competencias transversales
+                            #chart-holder-2
+                                #chart2.charts
+                        #docencia.hide
+                            h1 Cursos/tallers impartidos
+
+                            ul
+                                +li-formacion("http://viroide.github.io/webDev2015/", "WebDev en 2015")
+                                +li-formacion("http://es.slideshare.net/Viroide/twevelop", "Twevelop: Twitter API for developers")
+                                +li-formacion("http://es.slideshare.net/Viroide/brevsima-introduccin-a-la-usabilidad", "Brevísima introducción a la usabilidad")
+
+
+                        
+                        #personal.hide
+                            h1 Personal
+                            #personal
+                                p
+                                    small Esta sección es solo para que me conozcas un poco, si solo te interesan los datos cuantitativos vuelve al resto de pestañas.
+                                p.
+                                    Buenas, me llamo Jon, nací y crecí en Vitoria-Gasteiz ahora tengo 31 años y soy un trabajador competente, por lo menos en mi campo: el <strong>Desarrollo web</strong>. Si has visto la pestaña de <a href="#experiencia">experiencia</a> ya habrás visto donde he trabajado y estudiado así que no entraré en muchos detalles sobre esos temas. Aquí lo que quiero es que me conozcas como persona, ya que espero entrar a trabajar con tu equipo creo que es importante no solo conocer mis <a href="#conocimientos">skills </a> si no también mi personalidad. Ya habrás entrevisto que soy un friki y que valoro mucho el sentido del humor. Pero hay muchas más cosa que necesitas saber para contratarme y estar seguro que encajaré con vosotros (Aunque sea imposible estar seguro de algo así al 100%, intentaré convencerte hasta el 99% xD). 
+                                p.
+                                    Me considero una persona <strong>alegre</strong>, <strong>amistosa</strong>, que suelo caer bien a la gente y que no tengo problemas en trabajar en equipo.
+                                p.
+                                    Por otro lado soy el tipo de persona que siempre intenta mirar las cosas desde una perspectiva diferente a la mayoría. Si quieres un currela que obedezca sin pensar tal vez no deberías contratarme. Me gusta discutir las cosas antes de aceptarlas porque sí. Por discutir me refiero a debatir/dialogar no a soltar gritos ni a lanzar teclados sobre la mesa. Soy bastante calmado y no entro en furia facilmente, ni me tomo las cosas personalmente. 
+                                p.
+                                    <strong>Me gusta trabajar</strong>, esto sonará a frase para CV pero es la pura verdad, cuando un proyecto me gusta me encanta picar código y se me pasan las horas volando. Como buen programador, las tareas repetivas me matan, así que suelo invertir tiempo en no tener que volver a realizarlas, a esto algunos lo llaman <strong>automatizar tareas repetitivas</strong>, yo lo llamo no vuelvo a pasarme una mañana haciendo esto ni loco.
+                                p.
+                                    Para conocerme más lo mejor es vernos en persona o por videoconferencia, así que tendremos que arreglar una reunión, para ello contacta conmigo en cualquiera de mis formas de contacto listadas en <a href="#resumen">mi resumen</a>.
 
         script(src="#{path_js}")
         script.
@@ -123,5 +180,6 @@ html(lang="es")
             };
         if debug
           script(src="http://localhost:35729/livereload.js")
+        script(src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.min.js" charset="utf-8")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js")
