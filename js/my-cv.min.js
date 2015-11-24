@@ -1,6 +1,6 @@
 /**
  * my-cv - My resume representation on a web 
- * @version v0.0.1
+ * @version v0.9.9
  * @author Jon E. Eguiluz
  * @license ISC
  */
