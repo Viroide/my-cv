@@ -109,7 +109,7 @@ gulp.task('css-print', function() {
 });
 
 gulp.task('gh-pages', function() {
-  return gulp.src(distPath)
+  return gulp.src(distPath+'/**/*')
   .pipe(gulpCopy("./"));
 });
 
