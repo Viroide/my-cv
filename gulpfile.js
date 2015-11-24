@@ -89,6 +89,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest(distPath+'/css/'))
     .pipe(livereload());
 });
+<<<<<<< HEAD
 
 gulp.task('css-print-build', function() {
   return gulp.src(srcPath+'/stylus/print.styl')
@@ -111,6 +112,25 @@ gulp.task('css-print', function() {
 gulp.task('gh-pages', function() {
   return gulp.src([distPath+'/**/*'])
     .pipe(gulp.dest('./'));
+=======
+
+gulp.task('css-print-build', function() {
+  return gulp.src(srcPath+'/stylus/print.styl')
+    .pipe(sourcemaps.init())
+    .pipe(stylus({ compress: true }))
+    .pipe(rename({ basename: pkg.name  , suffix:"_print.min"}))
+    .pipe(header(banner, { pkg : pkg } ))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(distPath+'/css/'));
+});
+
+gulp.task('css-print', function() {
+  return gulp.src(srcPath+'/stylus/print.styl')
+    .pipe(stylus({linenos: true}))
+    .pipe(rename({ basename: pkg.name, suffix: "_print"}))
+    .pipe(gulp.dest(distPath+'/css/'))
+    .pipe(livereload());
+>>>>>>> 3da4f6c448eca64031cc98b81890b365dded4f01
 });
 
 gulp.task('watch', function() {
